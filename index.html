@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Clinic Booking Demo</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#e5ddd5;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.chat-box{
+width:350px;
+background:white;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+overflow:hidden;
+}
+
+.header{
+background:#075E54;
+color:white;
+padding:15px;
+font-weight:bold;
+}
+
+.chat{
+padding:15px;
+height:350px;
+overflow-y:auto;
+background:#efeae2;
+}
+
+.msg{
+background:white;
+padding:10px;
+border-radius:8px;
+margin-bottom:10px;
+width:80%;
+}
+
+.bot{
+background:#dcf8c6;
+}
+
+.buttons button{
+display:block;
+margin:5px 0;
+padding:8px;
+width:100%;
+border:none;
+background:#25D366;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+.slot button{
+display:block;
+margin:5px 0;
+padding:8px;
+width:100%;
+border:none;
+background:#128C7E;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="chat-box">
+
+<div class="header">
+ABC Clinic Booking
+</div>
+
+<div class="chat" id="chat">
+
+<div class="msg bot">
+Welcome to ABC Clinic 🏥<br><br>
+Please choose an option
+</div>
+
+<div class="buttons">
+
+<button onclick="showSlots()">Book Appointment</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showSlots(){
+
+document.getElementById("chat").innerHTML += `
+<div class="msg">
+Available Slots
+</div>
+
+<div class="slot">
+
+<button onclick="confirmBooking('10:00 AM')">10:00 AM</button>
+<button onclick="confirmBooking('10:30 AM')">10:30 AM</button>
+<button onclick="confirmBooking('11:00 AM')">11:00 AM</button>
+
+</div>
+`;
+
+}
+
+function confirmBooking(time){
+
+document.getElementById("chat").innerHTML += `
+<div class="msg bot">
+✅ Appointment Confirmed<br><br>
+
+Doctor : Dr ABC<br>
+Time : ${time}<br>
+Date : Today<br><br>
+
+Please arrive 10 minutes early.
+</div>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
