@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clinic Admin Panel Demo</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f9;
+margin:0;
+}
+
+.header{
+background:#075E54;
+color:white;
+padding:15px;
+font-size:20px;
+}
+
+.container{
+padding:20px;
+}
+
+.card{
+background:white;
+padding:15px;
+margin-bottom:15px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+button{
+padding:6px 10px;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+
+.enable{
+background:#28a745;
+color:white;
+}
+
+.disable{
+background:#dc3545;
+color:white;
+}
+
+.booked{
+background:#17a2b8;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Clinic Admin Dashboard
+</div>
+
+<div class="container">
+
+<div class="card">
+<h3>Today's Appointment Slots</h3>
+
+<table width="100%" border="0">
+
+<tr>
+<th>Time Slot</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>10:00 AM</td>
+<td id="slot1">Available</td>
+<td>
+<button class="disable" onclick="toggleSlot('slot1')">Enable / Disable</button>
+</td>
+</tr>
+
+<tr>
+<td>10:30 AM</td>
+<td id="slot2">Booked</td>
+<td>
+<button class="disable" onclick="toggleSlot('slot2')">Enable / Disable</button>
+</td>
+</tr>
+
+<tr>
+<td>11:00 AM</td>
+<td id="slot3">Available</td>
+<td>
+<button class="disable" onclick="toggleSlot('slot3')">Enable / Disable</button>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="card">
+
+<h3>Patient Bookings</h3>
+
+<table width="100%">
+
+<tr>
+<th>Patient Name</th>
+<th>Time</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Rahul</td>
+<td>10:30 AM</td>
+<td>Confirmed</td>
+</tr>
+
+<tr>
+<td>Anitha</td>
+<td>11:00 AM</td>
+<td>Pending</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleSlot(id){
+
+var status = document.getElementById(id);
+
+if(status.innerHTML=="Available"){
+status.innerHTML="Disabled";
+}
+
+else if(status.innerHTML=="Disabled"){
+status.innerHTML="Available";
+}
+
+}
+
+</script>
+
+</body>
+</html>
